@@ -1,0 +1,59 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+*.swp
+*.iml
+*.ipr
+*.iws
+.idea/
+.atom/
+.history
+# VS Code: share the recommended extensions and launch configs, but keep
+# everyone's personal settings local.
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# Secrets and local config (never commit these)
+.env
+.env.*
+*.keystore
+*.jks
+key.properties
+local.properties
+
+# Flutter/Dart/Pub build output and caches
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+**/doc/api/
+.widget_preview/
+migrate_working_dir/
+
+# Android
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# iOS
+**/ios/Flutter/.last_build_id
+.swiftpm/
+
+# Release symbols and obfuscation maps
+app.*.symbols
+app.*.map.json
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+.build/
+.buildlog/
+.svn/
