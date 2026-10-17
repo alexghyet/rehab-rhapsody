@@ -2,14 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Rehab Rhapsody (Chrome)",
+      "name": "Rehab Rhapsody (Browser preview)",
       "request": "launch",
       "type": "dart",
       "program": "lib/main.dart",
       "deviceId": "chrome"
     },
     {
-      "name": "Rehab Rhapsody (any device)",
+      "name": "Rehab Rhapsody (iPhone)",
       "request": "launch",
       "type": "dart",
       "program": "lib/main.dart"

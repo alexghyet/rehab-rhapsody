@@ -1,5 +1,6 @@
 # Operating system files
 .DS_Store
+._*
 Thumbs.db
 desktop.ini
 
@@ -10,20 +11,27 @@ desktop.ini
 *.iws
 .idea/
 .atom/
-.history
+.history/
 # VS Code: share the recommended extensions and launch configs, but keep
 # everyone's personal settings local.
 .vscode/*
 !.vscode/extensions.json
 !.vscode/launch.json
+!.vscode/tasks.json
 
-# Secrets and local config (never commit these)
+# Local environment values; share placeholder-only examples.
 .env
 .env.*
-*.keystore
-*.jks
-key.properties
-local.properties
+!.env.example
+!.env.*.example
+
+# Signing credentials and private keys
+*.p8
+*.p12
+*.pfx
+*.key
+*.mobileprovision
+*.provisionprofile
 
 # Flutter/Dart/Pub build output and caches
 .dart_tool/
@@ -36,15 +44,15 @@ local.properties
 **/doc/api/
 .widget_preview/
 migrate_working_dir/
+# Keep pubspec.lock and .metadata tracked for reproducible app setup.
 
-# Android
-/android/app/debug
-/android/app/profile
-/android/app/release
-
-# iOS
+# iOS caches and user state (additional generated files: ios/.gitignore)
 **/ios/Flutter/.last_build_id
 .swiftpm/
+**/DerivedData/
+**/xcuserdata/
+*.xcuserstate
+# Keep native dependency lockfiles (Podfile.lock / Package.resolved) tracked.
 
 # Release symbols and obfuscation maps
 app.*.symbols
