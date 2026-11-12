@@ -1,0 +1,83 @@
+{
+  "source": "User-provided LightBlue screenshot; transcribed hex values",
+  "ordering": "Oldest to newest",
+  "protocolVersion": 1,
+  "stationaryCalibration": false,
+  "samples": [
+    {
+      "hex": "01008B0348785506D2FF1C0410217F001EFF0E00",
+      "sequence": 907,
+      "timestampUs": 106264648,
+      "accelerationRaw": [
+        -46,
+        1052,
+        8464
+      ],
+      "angularVelocityRaw": [
+        127,
+        -226,
+        14
+      ]
+    },
+    {
+      "hex": "01008C03CB645606D0FF1B042821820015FF0900",
+      "sequence": 908,
+      "timestampUs": 106325195,
+      "accelerationRaw": [
+        -48,
+        1051,
+        8488
+      ],
+      "angularVelocityRaw": [
+        130,
+        -235,
+        9
+      ]
+    },
+    {
+      "hex": "01008D037D4D5706CBFF28042B217F0023FF0F00",
+      "sequence": 909,
+      "timestampUs": 106384765,
+      "accelerationRaw": [
+        -53,
+        1064,
+        8491
+      ],
+      "angularVelocityRaw": [
+        127,
+        -221,
+        15
+      ]
+    },
+    {
+      "hex": "01008E032F365806C8FF25042021840024FF0E00",
+      "sequence": 910,
+      "timestampUs": 106444335,
+      "accelerationRaw": [
+        -56,
+        1061,
+        8480
+      ],
+      "angularVelocityRaw": [
+        132,
+        -220,
+        14
+      ]
+    },
+    {
+      "hex": "01008F03B2225906D6FF2D0423217A0008FF0800",
+      "sequence": 911,
+      "timestampUs": 106504882,
+      "accelerationRaw": [
+        -42,
+        1069,
+        8483
+      ],
+      "angularVelocityRaw": [
+        122,
+        -248,
+        8
+      ]
+    }
+  ]
+}

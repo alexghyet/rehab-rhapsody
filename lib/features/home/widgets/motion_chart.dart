@@ -2,78 +2,6 @@ import 'package:flutter/foundation.dart' show listEquals;
 import 'package:flutter/material.dart';
 
 import '../../../theme/app_theme.dart';
-import '../../../widgets/surface_card.dart';
-
-class MotionCard extends StatelessWidget {
-  const MotionCard({
-    super.key,
-    required this.samples,
-    required this.targetLow,
-    required this.targetHigh,
-    this.chartHeight = 150,
-    this.isLive = false,
-  });
-
-  final List<double> samples;
-  final double targetLow;
-  final double targetHigh;
-  final double chartHeight;
-  final bool isLive;
-
-  @override
-  Widget build(BuildContext context) {
-    return SurfaceCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        spacing: 8,
-        children: [
-          Wrap(
-            alignment: WrapAlignment.spaceBetween,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            spacing: 12,
-            runSpacing: 8,
-            children: [
-              Text('Arm motion', style: AppTheme.display(18)),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 4,
-                ),
-                decoration: BoxDecoration(
-                  color: AppTheme.mintSoft,
-                  borderRadius: BorderRadius.circular(999),
-                ),
-                child: Text(
-                  isLive ? 'Live' : 'Preview',
-                  style: AppTheme.body(12, color: AppTheme.mintInk),
-                ),
-              ),
-            ],
-          ),
-          Semantics(
-            image: true,
-            label: isLive
-                ? 'Live arm movement compared with the target range'
-                : 'Sample arm movement compared with the target range',
-            child: SizedBox(
-              height: chartHeight,
-              child: ClipRect(
-                child: CustomPaint(
-                  painter: MotionChartPainter(
-                    samples: samples,
-                    targetLow: targetLow,
-                    targetHigh: targetHigh,
-                    textScaler: MediaQuery.textScalerOf(context),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class MotionChartPainter extends CustomPainter {
   MotionChartPainter({
@@ -99,8 +27,8 @@ class MotionChartPainter extends CustomPainter {
     double y(double value) =>
         padding + (1 - value) * (size.height - 2 * padding);
 
-    final first = normalized(targetLow, 0.45);
-    final second = normalized(targetHigh, 0.8);
+    final first = normalized(targetLow, 0.60);
+    final second = normalized(targetHigh, 0.70);
     final low = first < second ? first : second;
     final high = first > second ? first : second;
     final bandTop = y(high);
@@ -120,17 +48,19 @@ class MotionChartPainter extends CustomPainter {
       ),
       textDirection: TextDirection.ltr,
       textScaler: textScaler,
-    )..layout(maxWidth: size.width - 20);
-    label.paint(
-      canvas,
-      Offset(
-        10,
-        (bandTop + (bandHeight - label.height) / 2).clamp(
-          0.0,
-          size.height - label.height,
+    )..layout(maxWidth: (size.width - 20).clamp(0.0, double.infinity));
+    if (label.height <= size.height && size.width > 20) {
+      label.paint(
+        canvas,
+        Offset(
+          10,
+          (bandTop + (bandHeight - label.height) / 2).clamp(
+            0.0,
+            size.height - label.height,
+          ),
         ),
-      ),
-    );
+      );
+    }
     label.dispose();
 
     final valid = samples.where((sample) => sample.isFinite).toList();

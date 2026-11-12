@@ -6,13 +6,9 @@ abstract final class AppTheme {
   static const muted = Color(0xFF6B6390);
   static const grape = Color(0xFF5B3DF5);
   static const grapeSoft = Color(0xFFECE6FF);
-  static const tile = Color(0xFFF8F6FF);
   static const mint = Color(0xFF19B394);
   static const mintSoft = Color(0xFFDDF7EF);
   static const mintInk = Color(0xFF0B6E57);
-  static const peach = Color(0xFFFFE3D6);
-  static const peachInk = Color(0xFFB4410C);
-  static const lilac = Color(0xFFE7DFFF);
 
   static const cardShadow = [
     BoxShadow(color: Color(0x145B3DF5), blurRadius: 18, offset: Offset(0, 6)),

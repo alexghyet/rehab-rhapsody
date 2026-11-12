@@ -62,6 +62,10 @@ app.*.map.json
 *.class
 *.log
 *.pyc
+__pycache__/
+node_modules/
+# Arduino dependencies are installed locally, not vendored into this app.
+/firmware/libraries/
 .build/
 .buildlog/
 .svn/
